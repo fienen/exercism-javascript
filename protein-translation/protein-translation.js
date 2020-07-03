@@ -35,12 +35,16 @@ export const translate = ( codon ) => {
       break;
     case 'UGG':
       proteins.push('Tryptophan');
+      break; 
+    case undefined:
       break;
     case 'UAA':
     case 'UAG':
     case 'UGA':
       stop = true;
       break;
+    default:
+      throw Error('Invalid codon');
   }
 
   return proteins;

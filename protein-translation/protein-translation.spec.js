@@ -29,7 +29,7 @@ describe('ProteinTranslation', () => {
     expect(translate('UGUUGC')).toEqual(['Cysteine', 'Cysteine']);
   });
 
-  xtest('Tryptophan codon translates into protein', () => {
+  test('Tryptophan codon translates into protein', () => {
     expect(translate('UGG')).toEqual(['Tryptophan']);
   });
 
@@ -53,11 +53,11 @@ describe('ProteinTranslation', () => {
     expect(translate('AUGUUUUCUUAAAUG')).toEqual(['Methionine', 'Phenylalanine', 'Serine']);
   });
 
-  xtest('Invalid codon throws error', () => {
+  test('Invalid codon throws error', () => {
     expect(() => translate('LOL')).toThrow(new Error('Invalid codon'));
   });
 
-  xtest('Invalid codon throws error', () => {
+  test('Invalid codon throws error', () => {
     expect(() => translate('AUGOO')).toThrow(new Error('Invalid codon'));
   });
 });
