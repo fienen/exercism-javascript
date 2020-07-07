@@ -1,8 +1,7 @@
-//
-// This is only a SKELETON file for the 'Raindrops' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
-export const convert = () => {
-  throw new Error("Remove this statement and implement this function");
+export const convert = num => {
+  let rain = '';
+  if(num % 3 === 0) rain += 'Pling';
+  if(num % 5 === 0) rain += 'Plang'; 
+  if(num % 7 === 0) rain += 'Plong';
+  return rain || num.toString();
 };
