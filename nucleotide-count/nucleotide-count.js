@@ -1,10 +1,26 @@
-//
-// This is only a SKELETON file for the 'Nucleotide Count' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 export class NucleotideCounts {
-  static parse() {
-    throw new Error("Remove this statement and implement this function");
+  static parse( rna ) {
+    let a = 0, c = 0, g = 0, t = 0;
+
+    [...rna].map(letter => {
+      switch (letter) {
+        case 'A':
+          a++;
+          break;
+        case 'C':
+          c++;
+          break;
+        case 'G':
+          g++;
+          break;
+        case 'T':
+          t++;
+          break;
+        default:
+          throw Error('Invalid nucleotide in strand');
+      }
+    });
+
+    return `${a} ${c} ${g} ${t}`;
   }
 }
